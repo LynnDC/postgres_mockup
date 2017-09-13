@@ -10,7 +10,7 @@
     profile.age = $('#age').val();
   })
 
-  profile.insertRecord = function(callback) {
+  profile.submit = function(callback) {
     $.post('/profile', {first: this.first, last: this.last, age: this.age})
       .then(function(data) {
         console.log(data);

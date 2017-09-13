@@ -5,7 +5,7 @@ const pg = require('pg');
 const bodyParser = require('body-parser');
 const PORT = process.env.PORT || 3000;
 const app = express();
-const conString = process.env.DATABASE_URL || 'postgres://localhost:5432/';
+const conString = 'postgres://localhost:5432/';
 const client = new pg.Client(conString);
 
 client.connect();
@@ -35,7 +35,7 @@ function loadDB() {
     profile_id SERIAL PRIMARY KEY,
     first VARCHAR(50) NOT NULL,
     last VARCHAR(50) NOT NULL,
-    age INTEGER NOT NULL,
+    age INTEGER NOT NULL
     )`)
     .catch(err => {
       console.log(err)
